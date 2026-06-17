@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-
+import numpy as np
 import pickle
 import pandas as pd
 import urllib.parse
@@ -14,7 +14,8 @@ movies_data=pickle.load(open("Movies_NewData.pkl","rb"))
 movies_dict = pickle.load(open('movies_dict.pkl', 'rb'))
 movies = pd.DataFrame(movies_dict)
 
-similarity = pickle.load(open('Newsimilarity.pkl', 'rb'))
+data=np.load("Newsimilarity.npz")
+similarity = data['similarity']
 
 users_file = "users.pkl"
 
