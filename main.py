@@ -2,6 +2,8 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+import uvicorn
+import os
 import numpy as np
 import pickle
 import pandas as pd
@@ -212,3 +214,7 @@ async def movie_details(movie:str):
         "director":movie_row["crew"],
         "release_date":movie_row["release_date"]
     }
+
+if __name__=="__main__":
+    port=int(os.environ.get("PORT",10000))
+    uvicorn.rin("maim:app", host-"0.0.0.0", port=port)
