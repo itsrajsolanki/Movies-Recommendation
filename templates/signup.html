@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sign Up - Movie Recommendation System</title>
+<link rel="stylesheet" href="/static/styles.css?v=2">
+</head>
+<body>
+<div class="login-page">
+    <div class="login-card">
+        <h2>Create your account</h2>
+        {% if error %}
+        <div class="form-error">{{ error }}</div>
+        {% endif %}
+        {% if success %}
+        <div class="success-message">
+            Account created successfully for <strong>{{ username }}</strong>.
+            <a href="/login">Sign in now</a>
+        </div>
+        {% else %}
+        <form method="post" action="/signup">
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" placeholder="Enter username" required>
+
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="Enter password" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="/login">Sign In</a></p>
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>

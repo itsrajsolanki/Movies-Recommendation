@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Movie Recommender</title>
+<link rel="stylesheet" href="/static/styles.css?v=2">
+</head>
+
+<body>
+<div class="background-posters">
+    <div class="bg-poster poster-1"><span class="poster-label">Harry Potter</span></div>
+    <div class="bg-poster poster-2"><span class="poster-label">Batman</span></div>
+    <div class="bg-poster poster-3"><span class="poster-label">Pirates</span></div>
+    <div class="bg-poster poster-4"><span class="poster-label">Harry Potter</span></div>
+    <div class="bg-poster poster-5"><span class="poster-label">Inception</span></div>
+    <div class="bg-poster poster-6"><span class="poster-label">Matrix</span></div>
+    <div class="bg-poster poster-7"><span class="poster-label">Star Wars</span></div>
+    <div class="bg-poster poster-8"><span class="poster-label">Lord of the Rings</span></div>
+    <div class="bg-poster poster-9"><span class="poster-label">Frozen</span></div>
+    <div class="bg-poster poster-10"><span class="poster-label">Mission Impossible</span></div>
+    <div class="bg-poster poster-11"><span class="poster-label">Avengers</span></div>
+    <div class="bg-poster poster-12"><span class="poster-label">Superman</span></div>
+    <div class="bg-poster poster-13"><span class="poster-label">Toy Story</span></div>
+    <div class="bg-poster poster-14"><span class="poster-label">Fast &amp; Furious</span></div>
+    <div class="bg-poster poster-15"><span class="poster-label">Stuart Little</span></div>
+    <div class="bg-poster poster-16"><span class="poster-label">Captain America</span></div>
+    <div class="bg-poster poster-17"><span class="poster-label">Intersteller</span></div>
+    <div class="bg-poster poster-18"><span class="poster-label">Thorn</span></div>
+    <div class="bg-poster poster-19"><span class="poster-label">Jurasic Park</span></div>
+    <div class="bg-poster poster-20"><span class="poster-label">Frozen</span></div>
+    <div class="bg-poster poster-21"><span class="poster-label">Ice Age</span></div>
+    <div class="bg-poster poster-22"><span class="poster-label">Toy Story</span></div>
+    <div class="bg-poster poster-23"><span class="poster-label">Cars</span></div>
+    <div class="bg-poster poster-24"><span class="poster-label">Transformers</span></div>
+    <div class="bg-poster poster-25"><span class="poster-label">Guardians Of The Galaxy</span></div>
+</div>
+
+<div class="top-section">
+    <nav class="navbar">
+        <div class="nav-title">Movie Recommendation System</div>
+        <div class="nav-actions">
+            <input type="text" id="searchInput" placeholder="Search movie by name" />
+            <button id="searchBtn" type="button">Search</button>
+            <a id="loginBtn" class="nav-login-btn" href="/login">Sign In</a>
+        </div>
+    </nav>
+
+    <div class="header-description">
+        <h2>Movie Recommendation System</h2>
+        <p>This recommendation system uses intelligent movie similarity and user-friendly discovery to surface films you are likely to enjoy. It turns browsing into a curated experience by matching your taste with proven favorites, helping you find the perfect movie faster and with more confidence.</p>
+    </div>
+</div>
+
+<div class="container" id="movieList"></div>
+
+<div class="bottom-block">
+    <div class="bottom-block-content">
+        <h3>Created by Raj Solanki</h3>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">X</span>
+        <div id="movieDetails"></div>
+        <div class="recommend" id="recommendations"></div>
+    </div>
+</div>
+
+<script>window.appMovies = {{ movies | tojson }};</script>
+<script src="/static/script.js?v=2" defer></script>
+</body>
+</html>
